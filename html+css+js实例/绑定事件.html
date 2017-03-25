@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script>
+  window.onload=function()
+  {
+	  var oBtn=document.getElementById('btn1');
+
+	  if(oBtn.attachEvent)
+	  {
+		oBtn.attachEvent('onclick',function()
+		  {
+			  alert('a');
+		  });
+		  oBtn.attachEvent('onclick',function()
+		  {
+			  alert('b');
+		  });
+	  }else
+	  {
+		   oBtn.addEventListener('click',function()
+		  {
+			  alert('a');
+		  });
+		  oBtn.addEventListener('click',function()
+		  {
+			  alert('b');
+		  });
+	  }
+`
+	  //attachEvent(事件名，函数)
+	  //detachEvent(事件名，函数)解除绑定
+	  //IE  
+	  
+	  //addEventListener(事件名，函数，false)
+	  //removeEventListener(事件名，函数，false)解除绑定
+	  //FF,chrome
+	 
+  };
+  </script>
+ </head>
+ <body>
+  <input type="button" id="btn1" value="按钮" />
+ </body>
+</html>

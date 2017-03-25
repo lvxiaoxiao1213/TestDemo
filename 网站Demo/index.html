@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="main.css" type="text/css"  rel="stylesheet"/>
+<script>
+window.onload=function()
+{
+	var oMenu=document.getElementById('menu');
+	var oA=document.getElementById('pf');
+	var timer=null;
+	
+	oMenu.onmouseover=oA.onmouseover=function()
+	{
+		clearTimeout(timer);
+		oMenu.style.display='block';
+	};
+	oMenu.onmouseout=oA.onmouseout=function()
+	{
+		timer=setTimeout(function()
+		{
+			oMenu.style.display='none';
+		},250);	
+	};
+};
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="head">
+        <div class="top">
+            <a href="#" class="nav">糯米</a>
+            <a href="#" class="nav">新闻</a>
+            <a href="#" class="nav">hao123</a>
+            <a href="#" class="nav">地图</a>
+            <a href="#" class="nav">视频</a>
+            <a href="#" class="nav">贴吧</a>
+            <a href="#" class="lb">登录</a>
+            <a id="pf" href="#" class="pf">设置</a>
+            <a href="#" class="more">更多产品</a>
+        </div><!--top结束-->
+        <div class="body">
+            <div class="body_content">
+                <div class="pic">
+                    <img class="logo" src="http://www.baidu.com/img/bd_logo1.png" />
+                </div>
+                <div class="search">
+                    <form>
+                        <input class="input" type="text" /><input class="btn" type="button" value="百度一下" />
+                    </form>
+                </div>
+            </div>
+        </div><!--body结束-->
+    </div><!--head结束-->
+<div class="code">
+        <img src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/zbios_efde696.png" />
+        <p>手机百度</p>
+</div><!--code结束-->
+<div class="foot">
+	<p class="fir">
+    	<a href="#">把百度设为首页</a>
+        <a href="#">关于百度</a>
+        <a href="#">About Baidu</a>
+        <a href="#">百度推广</a>
+    </p>
+    <p class="sec">
+    	©2017 Baidu
+        <a href="#">使用百度前必读</a>
+        <a href="#">意见反馈</a>
+        京ICP证030173号
+        <i></i>
+        <a href="#">京公网安备11000002000001号</a>
+        <i></i>
+    </p>
+</div><!--foot结束-->
+<div id="menu" class="menu">
+	<a href="#">搜索设置</a>
+    <a href="#">高级搜索</a>
+    <a href="#">关闭预测</a>
+    <a href="#">搜索历史</a>
+</div><!--menu结束-->
+</div><!--wrapper结束-->
+</body>
+</html>

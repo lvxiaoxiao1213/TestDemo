@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+  #parent{width:600px;height:20px;background:#ccc;position:relative;margin:10px auto;}
+  #div1{width:20px;height:20px;background:red; position:absolute;left:0;top:0;}
+  #div2{width:400px;height:300px;border:1px solid black;position:relative;overflow:hidden;}
+  #div3{position:absolute;top:0px;left:0;}
+  </style>
+   <script>
+	window.onload=function()
+	{
+		var oDiv=document.getElementById('div1');
+		var oDiv2=document.getElementById('div2');
+		var oDiv3=document.getElementById('div3');
+
+		var oParent=document.getElementById('parent');
+
+		var disX=0;
+		oDiv.onmousedown=function(ev)
+		{
+			var oEvent=ev||event;
+
+			disX=oEvent.clientX-oDiv.offsetLeft;
+
+			document.onmousemove=function(ev)
+			{
+				var oEvent=ev||event;
+				var l=oEvent.clientX-disX;
+
+				if (l<0)
+				{
+					l=0;
+				}
+				else if(l>oParent.offsetWidth-oDiv.offsetWidth)
+				{
+					l=oParent.offsetWidth-oDiv.offsetWidth;
+				}
+
+				oDiv.style.left=l+'px';
+
+				var scale=l/(oParent.offsetWidth-oDiv.offsetWidth)
+				document.title=scale;
+				oDiv3.style.top=-scale*oDiv3.offsetHeight+'px';
+			};
+			document.onmouseup=function()
+			{
+				document.onmousemove=null;
+				document.onmouseup=null;		
+			};
+			return false;//阻止bug1(FF下div无内容时第二次拖拽重影) 阻止bug2(拖拽经过的文字不被选中在chrome,ff,IE9)
+		};
+			
+	};
+  </script>
+ </head>
+ <body>
+  <div id="parent">
+	<div id="div1"></div>
+  </div>
+  <div id="div2">
+	<div id="div3">最近看到一篇有关新海诚的访谈，在访谈中他将自己的受众定位为25岁以上的人。心想，难怪之前看的时候一边冷漠脸一边快进道，什么玩意儿嘛。43岁的新海诚的新片《你的名字》今天在日本上映了。“到了成年人的年纪，就想将自己曾经得到的东西，送给与曾经的自己相似的人。”
+
+乡下少女和城里少年，某天起床，发现彼此居然互换了灵魂，过上对方的生活，此时，1200年一遇的彗星即将降临地球……虽然资源遥遥无期，但看过先导小说版和已公布的pv，不由得感慨：
+
+从2002年的《星之声》，14年过去了，肤白腼腆的青年已经成了有啤酒肚的大叔，新海诚终于把学费交够了。
+
+[你好 动画]
+
+“我在10岁的时候就迷上了CG，当时还在读小学，从那时候开始用BASIC语言画一些简单的插画。”
+ 
+1996年，新海诚大学毕业进入游戏公司Falcom学习CG。“那时我简直为计算机的16位真色疯狂了，那些美妙的颜色运用在计算机绘画中确实让人感动。”
+ 
+1999年，新海诚制作了87秒的黑白动画短片《遥远的世界》，新海诚式意象初现：电车，路障，天空，行人，光影，飞行器。
+ 
+“天空，想飞吗？这世界真美啊，但是，无法接受。直到找到真正的另一半为止，一直呆在 我的身边。”
+ 
+1999年初夏到初冬，新海诚独自一人完成了他的练手小短片《她和她的猫》，不到5分钟的黑白影像，女子和猫咪四季的生活片断，新海诚式叙事风格初现：毫无起伏的独白，喧宾夺主的空镜，散文化的叙事，空灵的配乐。
+ 
+“我想，我，大概她也是，对于这个世界，还是喜欢着的。”
+
+[一进 一退]
+
+2002年，在Falcom工作5年的新海诚辞职，用7个月时间创作出25分钟的超长独立动画《星之声》，开创日本个人CG 动画时代。
+ 
+少女驾驶战舰前往8光年之外的宇宙战场，与留在地球的少年仅靠手机短信联系，短信传输的时间随着光年不断拉大越来越慢。8年后，少年收到短信 ：
+ 
+“二十四岁的阿升，你好，我是十五岁的美加子啊。迄今为止，有关阿升的事情，我都非常非常喜欢。”
+ 
+少年已成年，此刻他就要出发，驾驶战舰前往宇宙。8年前，他就已经获悉了，宇宙舰队在抗敌过程中全军覆没，少女生死未卜的消息。
+ 
+“我清楚的记得，那个夏天，我把八年的时间当成了永远。”
+ 
+新海诚式主题初现： 时空交错，交流障碍，永远爱难开口，爱不能得。
+ 
+“刚开始创作《星之声》的时候，我还在公司工作。在公司上班是日常生活的话，回家创作《星之声》就像是过节一样的非日常生活。中途辞退工作，花了7个月时间制作，每天的生活只是创作而已，那真的是非常幸福的一件事。”
+ 
+一个人怎么做动画？为什么新海诚的作品背景精致写实，人物却都像纸片？
+ 
+新海诚的背景都是在实拍照片的基础上用PS，AE等软件对画面色彩及细节进行调整和渲染，在一枚一枚背景画的基础上，用共通的风格使其融为一体。细节一丝不苟，光影色调上高于现实，造就了新海诚式美术：精致，唯美，统一。
+ 
+人物则是新海诚用DV拍摄真人动作片段，以此为基础临摹出所需的人物动作。CG熟练，画工较次，就造成了背景精致写实，人物却都像纸片，为人赞赏，也为人诟病。</div>
+  </div>
+ </body>
+</html>

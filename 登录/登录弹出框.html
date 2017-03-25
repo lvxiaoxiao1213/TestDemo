@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="main.css" rel="stylesheet" type="text/css" />
+<script>
+function showLogin()
+{
+	var oLogin=document.getElementById('login');
+	var oBack=document.getElementById('back');
+	var clientx=document.documentElement.clientWidth;
+	var clienty=document.documentElement.clientHeight;
+	var l=(clientx-oLogin.offsetWidth)/2;
+	var t=(clienty-oLogin.offsetHeight)/2;
+	oLogin.style.left=l+'px';
+	oLogin.style.top=t+'px';
+	oLogin.style.display='block';
+	oBack.style.display='block';	
+}
+function hiddenLogin()
+{
+	var oLogin=document.getElementById('login');
+	var oBack=document.getElementById('back');
+	oLogin.style.display='none';
+	oBack.style.display='none';
+}
+function titleMove()
+{
+	var moveable=true;
+	var oLogin=document.getElementById('login');
+	
+	var clientX=window.event.clientX;
+	var clientY=window.event.clientY;
+	var moveTop=parseInt(oLogin.style.top);
+	var moveLeft=parseInt(oLogin.style.left);
+	
+	document.onmousemove=function MouseMove()
+	{
+		if(moveable){
+			var y=moveTop+window.event.clientY-clientY;
+			var x=moveLeft+window.event.clientX-clientX;
+			if(x>0 && y>0){
+				oLogin.style.top=y+'px';
+				oLogin.style.left=x+'px';
+				}
+			}
+	}
+	document.onmouseup=function Mouseup()
+	{
+		moveable=false;
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="main" class="main">
+	<a href="javascript:showLogin();">登录</a>
+</div>
+<div id="login" class="login">
+    <div class="login_title" onmousedown="titleMove()">
+       <a href="javascript:hiddenLogin();" class="close" id="close">×</a>
+    </div>
+    <table class="form">
+       <tr>
+           <td>用户名:</td>
+           <td><input type="text"/></td>
+       </tr>
+       <tr>
+           <td>密码:</td>
+           <td><input type="text"/></td>
+       </tr>
+    </table>
+</div>
+<div id="back" class="back"></div>
+</body>
+</html>

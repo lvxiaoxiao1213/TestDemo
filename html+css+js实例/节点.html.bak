@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script>
+	window.onload=function() 
+	{
+		var oBtn=document.getElementById('btn1');
+		var oUl=document.getElementById('ul1');
+		var oTx=document.getElementById('tx1');
+
+		oBtn.onclick=function()
+		{
+			var oLi=document.createElement('li');
+			oLi.innerHTML=oTx.value;
+			oUl.appendChild(oLi);
+		};
+	};
+  </script>
+ </head>
+ <body>
+  <input id="tx1" type="text" />
+  <input id="btn1" type="button" value="创建"/>
+  <ul id="ul1"></ul>
+ </body>
+</html>

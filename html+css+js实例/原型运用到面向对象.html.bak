@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script>
+  function createPerson(name,qq)
+  {
+	  //系统:var this=new Object();
+	  this.name=name;
+	  this.qq=qq;
+	  //系统:return this;
+  }
+
+  createPerson.prototype.showName=function()
+  {
+		  alert('我的名字'+this.name);
+  };
+  createPerson.prototype.showQQ=function()
+  {
+		  alert('我的qq'+this.qq);
+  };
+
+  var obj=new createPerson('blue','566465465');
+  var obj2=new createPerson('lxx','55555');
+  obj.showName();
+  obj.showQQ();
+  obj2.showName();
+  obj2.showQQ();
+  alert(obj.showName==obj2.showName);//方法是同一个，不占用多余内存
+  
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script>
+	window.onload=function () 
+	{
+		var oTx1=document.getElementById('tx1');
+		var oTx2=document.getElementById('tx2');
+		var oBtn=document.getElementById('btn1');
+
+		oBtn.onclick=function ()
+		{
+			if(isNaN(oTx1.value)||isNaN(oTx2.value))
+			{
+				alert('您输入了非数字！请重新输入');
+			}else
+				alert(parseInt(otgg 60Tx1.value)+parseInt(oTx2.value));
+		}
+	};
+  </script>		
+ </head>
+ <body>
+  <input type="text" id="tx1" />
+  <input type="text" id="tx2" />
+  <input id="btn1" type="button" value="求和" />
+ </body>
+</html>
